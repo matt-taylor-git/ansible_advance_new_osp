@@ -1,6 +1,6 @@
 ---
 # vars file for osp.servers
-osp_servers:
+osp_instances:
   frontend:
     name: frontend
     state: present
@@ -37,3 +37,6 @@ osp_servers:
     security_group: db
     meta:
       - { group: appdbs, deployment_name: QA}
+
+ansible_user: cloud-user
+osp_cloud: ospcloud
