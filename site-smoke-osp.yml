@@ -11,11 +11,14 @@
     tags:
       - osp.smoke
 
+  - name: Curl website
+    command: curl "http://{{item.public_v4}}"
+    with_items:
+       - "{{ openstack_info.ansible_facts.openstack_servers }}"
+    register: webpage
 
-# - name: Curl website
-
-# - name: Fail if 'Ansible has done its job' is not in the page content
-#   fail:
-#   when: "'Ansible has done its job' not in webpage.results[0].content"
-#   tags:
-#     - osp.smoke
+  - name: Fail if 'Ansible has done its job' is not in the page content
+    fail:
+    when: "'Ansible has done its job' not in webpage.results[0].stdout"
+    tags:
+      - osp.smoke
