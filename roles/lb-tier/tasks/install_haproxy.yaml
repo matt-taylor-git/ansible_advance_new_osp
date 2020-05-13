@@ -1,7 +1,7 @@
 ---
 - name: Install httpie
   package:
-    name: httpie
+    name: python2-httpie
     state: latest
 - name: Install HAProxy
   yum:
