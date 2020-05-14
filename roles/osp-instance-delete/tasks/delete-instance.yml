@@ -1,0 +1,5 @@
+- name: Delete server instances 
+  os_server:
+    cloud: "{{ osp_cloud }}"
+    name: "{{ osp_instance.name }}"
+    state: absent

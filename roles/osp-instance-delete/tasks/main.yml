@@ -1,5 +1,9 @@
 ---
 # tasks file for roles/osp-instance-delete
-  - name: Fetch Instance Info
-  - name: Delete instances
-   
+# - name: Fetch Instance Info
+# - name: Delete instances
+- include_tasks: delete-instance.yml
+  loop: "{{ osp_instances }}"
+  loop_control:
+    loop_var: osp_instance
+    label: "{{ osp_instance.name }}"
