@@ -1,14 +1,14 @@
-# - name: yum clean
-#   shell: yum clean all
-# - name: install pip
-#   yum:
-#     name:
-#       - python-pip
-# - name: Install openstacksdk library
-#   pip:
-#     name: openstacksdk
-#     state: latest
-#     extra_args: -U
+- name: yum clean
+  shell: yum clean all
+- name: install pip
+  yum:
+    name:
+      - python-pip
+- name: Install openstacksdk library
+  pip:
+    name: openstacksdk==0.39.0
+#   state: latest
+    extra_args: -U
 - name: Create clouds.yaml file
   blockinfile:
     create: yes
