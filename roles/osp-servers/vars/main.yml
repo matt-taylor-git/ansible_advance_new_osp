@@ -42,4 +42,4 @@ osp_instances:
   meta: "group=appdbs,deployment_name=QA"
 
 ansible_user: cloud-user
-osp_cloud: ospcloud
+osp_cloud: openstack
