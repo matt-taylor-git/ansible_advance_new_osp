@@ -6,3 +6,8 @@
     src: open_three-tier-app.repo
     dest: /etc/yum.repos.d/open_three-tier-app.repo
     mode: u=rw,go=r
+
+- name: Remove internal repo file
+  file: 
+    path: /etc/yum.repos.d/internal.repo
+    state: absent
