@@ -1,6 +1,9 @@
 - hosts: workstation
   gather_facts: false
   tasks:
+  - name: Wait for connectivity from previous task
+      pause:
+        minutes: 2
   - name: OpenStack servers
     os_server_facts:
      cloud: openstack

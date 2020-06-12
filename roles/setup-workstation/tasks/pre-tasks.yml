@@ -1,12 +1,14 @@
-- name: yum clean
-  shell: yum clean all
+# - name: yum clean
+#   shell: yum clean all
 - name: install pip
-  yum:
+  dnf:
     name:
-      - python2-pip
+      - python3-pip
+    state: latest
 - name: Install openstacksdk library
   pip:
-    name: openstacksdk==0.39.0
+    name: openstacksdk
+    executable: pip3
 #   state: latest
     extra_args: -U
 # - name: Create clouds.yaml file
